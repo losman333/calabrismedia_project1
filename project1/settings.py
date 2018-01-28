@@ -157,6 +157,11 @@ INSTALLED_APPS = (
     'project1'
 )
 
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+
 LANGUAGES = (
     ## Customize this
     ('en', gettext('en')),
@@ -215,6 +220,7 @@ THUMBNAIL_PROCESSORS = (
 
 
 AWS_STORAGE_BUCKET_NAME = config('BUCKET_NAME')
+AWS_S3_REGION_NAME = config('REGION_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
