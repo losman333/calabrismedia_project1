@@ -37,6 +37,7 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 
+INTERNAL_IPS = ('127.0.0.1', )
 
 
 
