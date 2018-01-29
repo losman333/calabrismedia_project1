@@ -224,7 +224,7 @@ THUMBNAIL_PROCESSORS = (
 AWS_STORAGE_BUCKET_NAME = config('BUCKET_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
 
 
 STATICFILES_LOCATION = 'static'
@@ -236,6 +236,6 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES = {
     'default': dj_database_url.config(
-        default=config('DATABASE_URL')
+        default=config('DATABASE_URL', )
     )
 }
