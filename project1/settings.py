@@ -145,6 +145,7 @@ INSTALLED_APPS = (
     'sortedm2m',
     'taggit',
     'filer',
+    'reversion',
     'easy_thumbnails',
     'djangocms_column',
     'djangocms_link',
