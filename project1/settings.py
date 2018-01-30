@@ -167,7 +167,7 @@ INSTALLED_APPS = (
     'django.contrib.sitemaps',
     'django.contrib.staticfiles',
     'django.contrib.messages',
-    'project1'
+    'project1',
 )
 
 AWS_S3_OBJECT_PARAMETERS = {
