@@ -129,15 +129,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
-    'djangocms_admin_style',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.staticfiles',
-    'django.contrib.messages',
+
     'cms',
     'menus',
     'sekizai',
@@ -165,6 +157,15 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_video',
     'storages',
+    'djangocms_admin_style',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.admin',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
+    'django.contrib.staticfiles',
+    'django.contrib.messages',
     'project1'
 )
 
