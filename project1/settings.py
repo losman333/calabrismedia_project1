@@ -129,12 +129,19 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
-
+'djangocms_style',
+    'djangocms_snippet',
+    'djangocms_googlemap',
+    'djangocms_video',
+    'djangocms_column',
+    'djangocms_link',
+    'storages',
+    'djangocms_admin_style',
     'cms',
     'menus',
     'sekizai',
     'treebeard',
-    'djangocms_text_ckeditor',
+
     'aldryn_apphooks_config',
     'aldryn_categories',
     'aldryn_common',
@@ -147,18 +154,12 @@ INSTALLED_APPS = (
     'filer',
     'reversion',
     'easy_thumbnails',
-    'djangocms_column',
-    'djangocms_link',
+
     'cmsplugin_filer_file',
     'cmsplugin_filer_folder',
     'cmsplugin_filer_image',
     'cmsplugin_filer_utils',
-    'djangocms_style',
-    'djangocms_snippet',
-    'djangocms_googlemap',
-    'djangocms_video',
-    'storages',
-    'djangocms_admin_style',
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
