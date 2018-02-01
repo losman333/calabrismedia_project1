@@ -156,6 +156,8 @@ INSTALLED_APPS = (
     'reversion',
     'easy_thumbnails',
 
+
+
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
