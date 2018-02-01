@@ -77,12 +77,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static/')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static/')  # add STATIC_ROOT to DIRS
-]
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'project1', 'static'),
+)
 SITE_ID = 1
 
 
@@ -142,6 +141,7 @@ INSTALLED_APPS = (
     'menus',
     'sekizai',
     'treebeard',
+    'djangocms_text_ckeditor',
     'aldryn_apphooks_config',
     'aldryn_categories',
     'aldryn_common',
@@ -169,8 +169,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'django.contrib.messages',
     'project1',
-    'djangocms_text_ckeditor',
-
 )
 
 AWS_S3_OBJECT_PARAMETERS = {
