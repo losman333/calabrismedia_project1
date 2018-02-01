@@ -129,7 +129,7 @@ MIDDLEWARE_CLASSES = (
 )
 
 INSTALLED_APPS = (
-'djangocms_style',
+    'djangocms_style',
     'djangocms_snippet',
     'djangocms_googlemap',
     'djangocms_video',
@@ -236,6 +236,10 @@ THUMBNAIL_PROCESSORS = (
 AWS_STORAGE_BUCKET_NAME = config('BUCKET_NAME')
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+STATIC_URL = "https://%s/%s/" % ( STATICFILES_LOCATION )
+
 
 
 
