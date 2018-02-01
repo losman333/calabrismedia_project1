@@ -156,11 +156,6 @@ INSTALLED_APPS = (
     'reversion',
     'easy_thumbnails',
 
-    'cmsplugin_filer_file',
-    'cmsplugin_filer_folder',
-    'cmsplugin_filer_image',
-    'cmsplugin_filer_utils',
-
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
