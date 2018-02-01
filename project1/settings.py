@@ -137,11 +137,12 @@ INSTALLED_APPS = (
     'djangocms_link',
     'storages',
     'djangocms_admin_style',
+    'djangocms_text_ckeditor',
     'cms',
     'menus',
     'sekizai',
     'treebeard',
-    'djangocms_text_ckeditor',
+
     'aldryn_apphooks_config',
     'aldryn_categories',
     'aldryn_common',
