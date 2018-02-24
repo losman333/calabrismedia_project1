@@ -88,7 +88,7 @@ SITE_ID = 1
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'project1', 'templates'),],
+        'DIRS': [os.path.join(BASE_DIR,'templates'),],
         'OPTIONS': {
             'context_processors': [
                 'django.contrib.auth.context_processors.auth',
@@ -113,8 +113,7 @@ TEMPLATES = [
 ]
 
 
-MIDDLEWARE_CLASSES = (
-    'cms.middleware.utils.ApphookReloadMiddleware',
+MIDDLEWARE = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -122,51 +121,64 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'cms.middleware.utils.ApphookReloadMiddleware',
     'cms.middleware.user.CurrentUserMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.language.LanguageCookieMiddleware'
+    'cms.middleware.language.LanguageCookieMiddleware',
+   
+
 )
 
 INSTALLED_APPS = (
-    'djangocms_style',
-    'djangocms_snippet',
-    'djangocms_googlemap',
-    'djangocms_video',
-    'djangocms_column',
-    'djangocms_link',
-    'storages',
-    'djangocms_admin_style',
-    'djangocms_text_ckeditor',
-    'cms',
-    'menus',
-    'sekizai',
-    'treebeard',
-
-    'aldryn_apphooks_config',
-    'aldryn_categories',
-    'aldryn_common',
-    'aldryn_newsblog',
-    'aldryn_people',
-    'aldryn_translation_tools',
-    'parler',
-    'sortedm2m',
-    'taggit',
-    'filer',
-    'reversion',
-    'easy_thumbnails',
-
-
-
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.admin',
-    'django.contrib.sites',
-    'django.contrib.sitemaps',
-    'django.contrib.staticfiles',
-    'django.contrib.messages',
-    'project1',
+                  
+                  'djangocms_style',
+                  'djangocms_snippet',
+                  'djangocms_googlemap',
+                  'djangocms_video',
+                  'djangocms_column',
+                  'djangocms_link',
+                  'djangocms_file',
+                  'djangocms_picture',
+                  'storages',
+                  'djangocms_admin_style',
+                  'djangocms_text_ckeditor',
+                  'cms',
+                  'menus',
+                  'sekizai',
+                  'treebeard',
+                  'aldryn_apphooks_config',
+                  'aldryn_categories',
+                  'aldryn_common',
+                  'aldryn_newsblog',
+                  'aldryn_people',
+                  'aldryn_translation_tools',
+                  'aldryn_gallery',
+                  'aldryn_background_image',
+                  'absolute',
+                  'aldryn_forms',
+                  'aldryn_forms.contrib.email_notifications',
+                  'captcha',
+                  'emailit',
+                  
+                  'parler',
+                  'sortedm2m',
+                  'taggit',
+                  'filer',
+                  'reversion',
+                  'easy_thumbnails',
+                  
+                  
+                  
+                  'django.contrib.auth',
+                  'django.contrib.contenttypes',
+                  'django.contrib.sessions',
+                  'django.contrib.admin',
+                  'django.contrib.sites',
+                  'django.contrib.sitemaps',
+                  'django.contrib.staticfiles',
+                  'django.contrib.messages',
+                  'project1',
 )
 
 AWS_S3_OBJECT_PARAMETERS = {
@@ -199,7 +211,8 @@ CMS_LANGUAGES = {
 
 CMS_TEMPLATES = (
     ## Customize this
-    ('fullwidth.html', 'Fullwidth'),
+    ('base.html', 'main'),
+    ('content.html', 'content'),
     ('sidebar_left.html', 'Sidebar Left'),
     ('sidebar_right.html', 'Sidebar Right')
 )
@@ -236,16 +249,21 @@ AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+MEDIAFILES_LOCATION = 'media'
+MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+
+
+
+
+
+
+STATIC_ROOT = 'lostkawzlifestyle1/staticfiles/'
 
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
 STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, STATICFILES_LOCATION)
-
-MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
 
 
 db_from_env = dj_database_url.config(conn_max_age=500)

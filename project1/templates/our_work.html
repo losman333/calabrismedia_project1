@@ -12,20 +12,12 @@
     </head>
     <body>
         {% cms_toolbar %}
-     
-                {% show_menu 0 100 100 100 "menu.html" %}
-              
-                            
-                            
-                      
+        <div class="container">
+            <ul class="nav">
+                {% show_menu 0 100 100 100 %}
+            </ul>
             {% block content %}{% endblock content %}
         </div>
-        <script src="{% static 'js/vendor/jquery.js' %}"></script>
-        <script src="{% static 'js/vendor/what-input.js' %}"></script>
-        <script src="{% static 'js/vendor/foundation.js' %}"></script>
-        
-        <script src="{% static 'js/app.js' %}"></script>
         {% render_block "js" %}
-        
     </body>
 </html>
