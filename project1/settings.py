@@ -224,6 +224,8 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser', 'cell',]
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
