@@ -5,15 +5,15 @@
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
-	
+
         {% if not detail_view %}
         
 	
 	
        	
+	
 		
-		
-      					          <img src="{% thumbnail article.featured_image 2000x500 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+      					          <img src="{% thumbnail article.featured_image 400x400 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
       				      	
 	          
 		
@@ -23,7 +23,7 @@
 
 	
 	
-                
+    
    
 
         {% else %}
@@ -69,6 +69,8 @@
   					
         
     {% endif %}
-   
+
 </article>
+
+
 
