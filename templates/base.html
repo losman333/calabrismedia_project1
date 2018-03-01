@@ -6,8 +6,10 @@
         <meta name="viewport" content="width=device-width,initial-scale=1">
             <link rel="stylesheet" href="{% static 'css/foundation.css' %}">
             <link rel="stylesheet" href="{% static 'css/app.css' %}">
-            <linK>
-            
+                <script src="{% static 'js/vendor/jquery.js' %}"></script>
+                <script src="{% static 'js/vendor/what-input.js' %}"></script>
+
+
         {% render_block "css" %}
     </head>
     <body>
@@ -20,8 +22,6 @@
                       
             {% block content %}{% endblock content %}
         </div>
-        <script src="{% static 'js/vendor/jquery.js' %}"></script>
-        <script src="{% static 'js/vendor/what-input.js' %}"></script>
         <script src="{% static 'js/vendor/foundation.js' %}"></script>
         
         <script src="{% static 'js/app.js' %}"></script>
