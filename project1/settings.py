@@ -256,7 +256,7 @@ DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 STATIC_ROOT = '/static/'
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 STATICFILES_LOCATION = 'static'
 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
