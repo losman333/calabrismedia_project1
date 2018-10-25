@@ -1,14 +1,19 @@
 {% load i18n staticfiles thumbnail cms_tags apphooks_config_tags %}
 
+
+			<div class="cell">
+			
 <article class="article
     {% if article.is_featured %} featured{% endif %}
     {% if not article.published %} unpublished{% endif %}">
-    
+    	
+    	<br>
+    	<br>
+    	
+    	
     {# The image is only shown on the detail view by using the condition "and detail_view" #}
     {% if article.featured_image_id and detail_view %}
-    <p>
-    <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
-        </p>
+    
         {% endif %}
         
         {% if article.categories.exists %}
@@ -20,6 +25,14 @@
         </p>
         {% endif %}
         
+        
+        <p>
+    	
+        </p>
+       
+        
+        	    <img src="{% thumbnail article.featured_image 800x450 crop subject_location=article.featured_image.subject_location %}" alt="{{ article.featured_image.alt }}">
+
         <h2>
             {% if not detail_view %}
             <a href="{% namespace_url 'article-detail' article.slug namespace=namespace default='' %}">{% render_model article "title" %}</a>
@@ -27,7 +40,6 @@
             {% render_model article "title" %}
             {% endif %}
         </h2>
-        
         <p>{{ article.publishing_date|date }}</p>
         
         {% include "aldryn_newsblog/includes/author.html" with author=article.author %}
@@ -45,4 +57,8 @@
         {% if detail_view %}
         {% render_placeholder article.content language placeholder_language %}
         {% endif %}
+       
+       
 </article>
+</div>
+
