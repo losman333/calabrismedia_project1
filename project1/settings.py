@@ -220,6 +220,10 @@ CMS_PLACEHOLDER_CONF = {}
 
 DJANGOCMS_STYLE_CHOICES = ['container', 'content', 'teaser', 'cell', 'grid-x', 'grid-margin-x', 'grid-x-padding','grid-container'   ]
 
+DJANGOCMS_STYLE_TAGS = ['div', 'article', 'hr', 'br', 'section', 'header', 'footer',
+                        'h1', 'h2', 'h3', 'h4', 'h5', 'h6']
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
